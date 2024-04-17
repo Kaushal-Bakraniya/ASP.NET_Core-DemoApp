@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor _context
+@model IEnumerable<UserModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <h3 class="pb-3 pt-0">Welcome, @User.Identity.Name</h3>
+    <!--<h6 class="pb-3 pt-0">Welcome, _context.HttpContext.Session.GetString("uname")</h6>-->
+}
+<div class="text-center">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Password</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

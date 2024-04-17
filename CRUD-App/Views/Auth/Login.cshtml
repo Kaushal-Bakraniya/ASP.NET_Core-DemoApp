@@ -1,0 +1,44 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container text-center">
+    <div class="card mx-auto w-50">
+        <div class="card-header">
+            <h3>Login</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <table class="table mb-2 text-left">
+                    <tr>
+                        <td class="p-2">
+                            <label>Enter Email</label>
+                        </td>
+                        <td class="p-2"> 
+                            <input type="email" asp-for="Email" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">
+                            <label>Enter Password</label>
+                        </td>
+                        <td class="p-2">
+                            <input type="password"
+                                   asp-for="Password" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pt-3 p-0 mb-0" colspan="2">
+                            <input type="submit" class="btn btn-primary w-100 m-0" value="Login" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="mb-0 pb-0">
+                            <a asp-controller="home" asp-action="Insert">Create New Account</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

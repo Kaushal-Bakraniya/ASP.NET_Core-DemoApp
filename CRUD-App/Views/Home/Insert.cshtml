@@ -1,0 +1,51 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "Insert";
+}
+
+<div class="container text-center">
+    <div class="card mx-auto w-50">
+        <div class="card-header">
+            <h3>Insert Record</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <table class="table mb-2 text-left">
+                    <tr>
+                        <td class="p-2">
+                            <label asp-for="Name"></label>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">
+                            <label asp-for="Email"></label>
+                        </td>
+                        <td class="p-2">
+                            <input type="email" asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">
+                            <label asp-for="Password"></label>
+                        </td>
+                        <td class="p-2">
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pt-3 p-0 mb-0" colspan="2">
+                            <input type="submit" class="btn btn-primary w-100 m-0" value="Add New Record" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
