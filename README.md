@@ -1,4 +1,4 @@
-# ASP_Core-DemoApp
+# ASP.NET_Core-DemoApp
 
 This is a simple demo application developed using ASP.NET Core and Entity Framework Core to showcase basic CRUD functionalities and authentication.
 
